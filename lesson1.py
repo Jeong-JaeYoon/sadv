@@ -1,3 +1,4 @@
+import copy
 import sys
 from collections import deque
 
@@ -74,3 +75,58 @@ print(*li, sep = '\n')
 ## f-string
 print(f'li = {li}')
 print('li = {}'.format(li))
+
+## 1차원 배열 생성
+li = [0] * 10
+print(li)
+
+## 2차원 배열 생성
+li = [[0]*3] * 3
+li[0][0] = 10
+print(li)
+
+li = [[0]*3 for _ in range(3)]
+li[0][0]=10
+print(li)
+
+## 3차원 배열 생성
+li = [[[0]*4 for _ in range(3)] for i in range(2)]
+print(li)
+
+## 1d copy
+l1 = [1,2,3]
+
+# referenc copy
+l2 = l1
+
+# shallow copy
+l3 = l1.copy()
+l3 = l1[:]
+
+## 2d copy
+l1 = [[0,0],[1,1],[2,2]]
+
+# reference copy
+l1 = l2
+
+# shallow copy
+l3 = l1.copy()
+l3 = l1[:]
+
+# deep copy
+l4 = copy.deepcopy(l1)
+
+# if, while false 조건
+# None, False
+# numeric : 0, 0.0, ...
+# empty collection : (), [], {}, set(), ''
+
+if ():
+    print(1)
+
+x,y = 0,1
+if x or y # x true이면 y는 확인 안 함
+if x and y # x false 이면 y 확인 안 함
+
+x if C else y # C 참이면 x, 거짓이면 y
+print(1 if () else 0)
