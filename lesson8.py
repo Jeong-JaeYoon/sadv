@@ -26,8 +26,9 @@ if ((1 <= n <= 100) and (n % 2 == 1)) and (1 <= m <= 4):
 
     else:
         for i in range(h):
-            print()
-
+            print(' '*i + '*'*(h-i))
+        for j in range(2, h+1):
+            print(' '*i + '*'*j)
 
 else:
     print("INPUT ERROR!")
