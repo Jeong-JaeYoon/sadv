@@ -22,3 +22,28 @@ while m > 0:
 
 for a in A:
     print(*a)
+
+## 해설
+
+n = int(input())
+A = [[0]*i for i in range(1, n+1)]
+
+def make_A():
+    r = c = -1
+    m = n
+    num = 0
+
+    while 1:
+        for dr, dc in zip([1,0,-1], [1,-1,0]):
+            for i in range(m):
+                r,c = r+dr, c+dc
+                A[r][c] = num
+                num = (num+1)%10
+            m -= 1
+            if m == 0:
+                return
+
+make_A()
+
+for a in A:
+    print(*a)
